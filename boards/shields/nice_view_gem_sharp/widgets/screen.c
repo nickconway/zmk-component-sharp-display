@@ -12,6 +12,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include <zmk/events/activity_state_changed.h>
 #include <zmk/events/battery_state_changed.h>
 #include <zmk/events/ble_active_profile_changed.h>
+#include <zmk/events/dynamic_macros_changed.h>
 #include <zmk/events/endpoint_changed.h>
 #include <zmk/events/layer_state_changed.h>
 #include <zmk/events/split_peripheral_status_changed.h>
@@ -26,6 +27,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include "layer.h"
 #include "output.h"
 #include "profile.h"
+#include "recording.h"
 #include "screen.h"
 #include "sleep.h"
 
@@ -54,6 +56,7 @@ static void draw_top(lv_obj_t *widget, const struct status_state *state) {
   draw_profile_status(canvas, state);
   draw_battery_status(canvas, state);
   draw_battery_peripheral_status(canvas, state);
+  draw_recording_indicator(canvas, state);
 }
 
 /**
@@ -211,6 +214,35 @@ ZMK_SUBSCRIPTION(widget_output_status, zmk_usb_conn_state_changed);
 #if defined(CONFIG_ZMK_BLE)
 ZMK_SUBSCRIPTION(widget_output_status, zmk_ble_active_profile_changed);
 #endif
+
+/**
+ * Recording status
+ **/
+
+static void set_recording_status(struct zmk_widget_screen *widget,
+                                 const struct recording_status_state *state) {
+  widget->state.macro_count = state->count;
+  draw_top(widget->obj, &widget->state);
+}
+
+static void recording_status_update_cb(struct recording_status_state state) {
+  struct zmk_widget_screen *widget;
+  SYS_SLIST_FOR_EACH_CONTAINER(&widgets, widget, node) {
+    set_recording_status(widget, &state);
+  }
+}
+
+static struct recording_status_state
+recording_status_get_state(const zmk_event_t *_eh) {
+  return (struct recording_status_state){.count = zmk_recording_macro_count()};
+}
+
+ZMK_DISPLAY_WIDGET_LISTENER(widget_recording_status,
+                            struct recording_status_state,
+                            recording_status_update_cb,
+                            recording_status_get_state);
+
+ZMK_SUBSCRIPTION(widget_recording_status, zmk_dynamic_macros_changed);
 
 /**
  * Activity state handling for sleep screen

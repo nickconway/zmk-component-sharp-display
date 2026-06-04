@@ -35,6 +35,7 @@ struct status_state {
 #else
   bool connected;
 #endif
+  uint8_t macro_count;
 };
 
 void to_uppercase(char *str);
