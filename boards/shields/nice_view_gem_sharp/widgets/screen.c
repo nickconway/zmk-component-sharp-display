@@ -12,7 +12,6 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include <zmk/events/activity_state_changed.h>
 #include <zmk/events/battery_state_changed.h>
 #include <zmk/events/ble_active_profile_changed.h>
-#include <zmk/events/dynamic_macros_changed.h>
 #include <zmk/events/endpoint_changed.h>
 #include <zmk/events/layer_state_changed.h>
 #include <zmk/events/split_peripheral_status_changed.h>
@@ -242,7 +241,10 @@ ZMK_DISPLAY_WIDGET_LISTENER(widget_recording_status,
                             recording_status_update_cb,
                             recording_status_get_state);
 
+#ifdef CONFIG_ZMK_BEHAVIOR_DYNAMIC_MACRO
+#include <zmk/events/dynamic_macros_changed.h>
 ZMK_SUBSCRIPTION(widget_recording_status, zmk_dynamic_macros_changed);
+#endif
 
 /**
  * Activity state handling for sleep screen

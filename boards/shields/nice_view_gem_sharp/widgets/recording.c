@@ -1,7 +1,6 @@
 #include "recording.h"
 #include "../assets/custom_fonts.h"
 #include <zephyr/kernel.h>
-#include <zmk/dynamic_macros.h>
 
 void draw_recording_indicator(lv_obj_t *canvas,
                               const struct status_state *state) {
