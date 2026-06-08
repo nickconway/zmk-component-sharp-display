@@ -1,2 +1,2 @@
-config SHIELD_NICE_VIEW_GEM_SHARP
-    def_bool $(shields_list_contains,nice_view_gem_sharp)
+config SHIELD_SHARP_DISPLAY
+    def_bool $(shields_list_contains,sharp_display)

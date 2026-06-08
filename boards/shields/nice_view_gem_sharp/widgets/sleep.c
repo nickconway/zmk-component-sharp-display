@@ -1,15 +1,15 @@
-#include <zephyr/kernel.h>
 #include <stdio.h>
 #include <string.h>
+#include <zephyr/kernel.h>
 
-#include "sleep.h"
 #include "../assets/custom_fonts.h"
+#include "sleep.h"
 
 static bool show_sleep_screen = false;
 
 // Beekeeb icon 96x96 - LVGL indexed 1-bit format
 static const uint8_t sleep_icon_map[] = {
-#if CONFIG_NICE_VIEW_WIDGET_INVERTED
+#if CONFIG_SHARP_DISPLAY_INVERTED
     0xff, 0xff, 0xff, 0xff, /*Color of index 0*/
     0x00, 0x00, 0x00, 0xff, /*Color of index 1*/
 #else
@@ -123,24 +123,21 @@ static const lv_image_dsc_t sleep_icon = {
     .data = sleep_icon_map,
 };
 
-bool is_sleep_screen_active(void) {
-    return show_sleep_screen;
-}
+bool is_sleep_screen_active(void) { return show_sleep_screen; }
 
-void set_sleep_screen_active(bool active) {
-    show_sleep_screen = active;
-}
+void set_sleep_screen_active(bool active) { show_sleep_screen = active; }
 
 void draw_sleep_screen(lv_obj_t *canvas) {
-    // Draw the sleep icon centered horizontally, near top of screen
-    lv_draw_image_dsc_t img_dsc;
-    lv_draw_image_dsc_init(&img_dsc);
-    // Center the 96px icon on the 144px wide screen: (144-96)/2 = 24
-    // Draw it a bit down from the top: y=32
-    canvas_draw_img(canvas, 24, 32, &sleep_icon, &img_dsc);
+  // Draw the sleep icon centered horizontally, near top of screen
+  lv_draw_image_dsc_t img_dsc;
+  lv_draw_image_dsc_init(&img_dsc);
+  // Center the 96px icon on the 144px wide screen: (144-96)/2 = 24
+  // Draw it a bit down from the top: y=32
+  canvas_draw_img(canvas, 24, 32, &sleep_icon, &img_dsc);
 
-    // Show "SLEEP" in small text below the icon
-    lv_draw_label_dsc_t label_dsc;
-    init_label_dsc(&label_dsc, LVGL_FOREGROUND, &quinquefive_8, LV_TEXT_ALIGN_LEFT);
-    canvas_draw_text(canvas, 12, 140, SCREEN_WIDTH-8, &label_dsc, "SLEEP");
+  // Show "SLEEP" in small text below the icon
+  lv_draw_label_dsc_t label_dsc;
+  init_label_dsc(&label_dsc, LVGL_FOREGROUND, &quinquefive_8,
+                 LV_TEXT_ALIGN_LEFT);
+  canvas_draw_text(canvas, 12, 140, SCREEN_WIDTH - 8, &label_dsc, "SLEEP");
 }

@@ -10,7 +10,7 @@
 
 const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_GRID
     uint8_t grid_map[] = {
-#if CONFIG_NICE_VIEW_WIDGET_INVERTED
+#if CONFIG_SHARP_DISPLAY_INVERTED
         0x00, 0x00, 0x00, 0xff, /*Color of index 0*/
         0xff, 0xff, 0xff, 0xff, /*Color of index 1*/
 #else
@@ -59,7 +59,7 @@ const lv_image_dsc_t grid = {
 
 const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_PROFILES
     uint8_t profiles_map[] = {
-#if CONFIG_NICE_VIEW_WIDGET_INVERTED
+#if CONFIG_SHARP_DISPLAY_INVERTED
         0xff, 0xff, 0xff, 0xff, /*Color of index 0*/
         0x00, 0x00, 0x00, 0xff, /*Color of index 1*/
 #else
@@ -87,7 +87,7 @@ const lv_image_dsc_t profiles = {
 
 const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST
     LV_ATTRIBUTE_IMG_L_BATTERY_100 uint8_t l_battery_100_map[] = {
-#if CONFIG_NICE_VIEW_WIDGET_INVERTED
+#if CONFIG_SHARP_DISPLAY_INVERTED
         0xff, 0xff, 0xff, 0xff, /*Color of index 0*/
         0x00, 0x00, 0x00, 0xff, /*Color of index 1*/
 #else
@@ -122,7 +122,7 @@ const lv_image_dsc_t l_battery_100 = {
 
 const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST
     LV_ATTRIBUTE_IMG_L_BATTERY_90 uint8_t l_battery_90_map[] = {
-#if CONFIG_NICE_VIEW_WIDGET_INVERTED
+#if CONFIG_SHARP_DISPLAY_INVERTED
         0xff, 0xff, 0xff, 0xff, /*Color of index 0*/
         0x00, 0x00, 0x00, 0xff, /*Color of index 1*/
 #else
@@ -157,7 +157,7 @@ const lv_image_dsc_t l_battery_90 = {
 
 const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST
     LV_ATTRIBUTE_IMG_L_BATTERY_75 uint8_t l_battery_75_map[] = {
-#if CONFIG_NICE_VIEW_WIDGET_INVERTED
+#if CONFIG_SHARP_DISPLAY_INVERTED
         0xff, 0xff, 0xff, 0xff, /*Color of index 0*/
         0x00, 0x00, 0x00, 0xff, /*Color of index 1*/
 #else
@@ -192,7 +192,7 @@ const lv_image_dsc_t l_battery_75 = {
 
 const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST
     LV_ATTRIBUTE_IMG_L_BATTERY_50 uint8_t l_battery_50_map[] = {
-#if CONFIG_NICE_VIEW_WIDGET_INVERTED
+#if CONFIG_SHARP_DISPLAY_INVERTED
         0xff, 0xff, 0xff, 0xff, /*Color of index 0*/
         0x00, 0x00, 0x00, 0xff, /*Color of index 1*/
 #else
@@ -227,7 +227,7 @@ const lv_image_dsc_t l_battery_50 = {
 
 const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST
     LV_ATTRIBUTE_IMG_L_BATTERY_25 uint8_t l_battery_25_map[] = {
-#if CONFIG_NICE_VIEW_WIDGET_INVERTED
+#if CONFIG_SHARP_DISPLAY_INVERTED
         0xff, 0xff, 0xff, 0xff, /*Color of index 0*/
         0x00, 0x00, 0x00, 0xff, /*Color of index 1*/
 #else
@@ -262,7 +262,7 @@ const lv_image_dsc_t l_battery_25 = {
 
 const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST
     LV_ATTRIBUTE_IMG_L_BATTERY_10 uint8_t l_battery_10_map[] = {
-#if CONFIG_NICE_VIEW_WIDGET_INVERTED
+#if CONFIG_SHARP_DISPLAY_INVERTED
         0xff, 0xff, 0xff, 0xff, /*Color of index 0*/
         0x00, 0x00, 0x00, 0xff, /*Color of index 1*/
 #else
@@ -298,7 +298,7 @@ const lv_image_dsc_t l_battery_10 = {
 
 const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST
     LV_ATTRIBUTE_IMG_R_BATTERY_100 uint8_t r_battery_100_map[] = {
-#if CONFIG_NICE_VIEW_WIDGET_INVERTED
+#if CONFIG_SHARP_DISPLAY_INVERTED
         0xff, 0xff, 0xff, 0xff, /*Color of index 0*/
         0x00, 0x00, 0x00, 0xff, /*Color of index 1*/
 #else
@@ -333,7 +333,7 @@ const lv_image_dsc_t r_battery_100 = {
 
 const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST
     LV_ATTRIBUTE_IMG_R_BATTERY_90 uint8_t r_battery_90_map[] = {
-#if CONFIG_NICE_VIEW_WIDGET_INVERTED
+#if CONFIG_SHARP_DISPLAY_INVERTED
         0xff, 0xff, 0xff, 0xff, /*Color of index 0*/
         0x00, 0x00, 0x00, 0xff, /*Color of index 1*/
 #else
@@ -368,7 +368,7 @@ const lv_image_dsc_t r_battery_90 = {
 
 const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST
     LV_ATTRIBUTE_IMG_R_BATTERY_75 uint8_t r_battery_75_map[] = {
-#if CONFIG_NICE_VIEW_WIDGET_INVERTED
+#if CONFIG_SHARP_DISPLAY_INVERTED
         0xff, 0xff, 0xff, 0xff, /*Color of index 0*/
         0x00, 0x00, 0x00, 0xff, /*Color of index 1*/
 #else
@@ -403,7 +403,7 @@ const lv_image_dsc_t r_battery_75 = {
 
 const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST
     LV_ATTRIBUTE_IMG_R_BATTERY_50 uint8_t r_battery_50_map[] = {
-#if CONFIG_NICE_VIEW_WIDGET_INVERTED
+#if CONFIG_SHARP_DISPLAY_INVERTED
         0xff, 0xff, 0xff, 0xff, /*Color of index 0*/
         0x00, 0x00, 0x00, 0xff, /*Color of index 1*/
 #else
@@ -438,7 +438,7 @@ const lv_image_dsc_t r_battery_50 = {
 
 const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST
     LV_ATTRIBUTE_IMG_R_BATTERY_25 uint8_t r_battery_25_map[] = {
-#if CONFIG_NICE_VIEW_WIDGET_INVERTED
+#if CONFIG_SHARP_DISPLAY_INVERTED
         0xff, 0xff, 0xff, 0xff, /*Color of index 0*/
         0x00, 0x00, 0x00, 0xff, /*Color of index 1*/
 #else
@@ -473,7 +473,7 @@ const lv_image_dsc_t r_battery_25 = {
 
 const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST
     LV_ATTRIBUTE_IMG_R_BATTERY_10 uint8_t r_battery_10_map[] = {
-#if CONFIG_NICE_VIEW_WIDGET_INVERTED
+#if CONFIG_SHARP_DISPLAY_INVERTED
         0xff, 0xff, 0xff, 0xff, /*Color of index 0*/
         0x00, 0x00, 0x00, 0xff, /*Color of index 1*/
 #else

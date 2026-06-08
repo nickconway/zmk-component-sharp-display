@@ -1,8 +1,6 @@
 file_format: "1"
-id: nice_view_gem_sharp
-name: nice!view_gem_sharp
+id: sharp_display
+name: sharp_display
 type: shield
-url: https://nicekeyboards.com/nice-view
-requires: [nice_view_header]
 features:
-  - display
+    - display

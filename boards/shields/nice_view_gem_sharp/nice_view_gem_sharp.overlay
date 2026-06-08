@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-&nice_view_spi {
+&sharp_display_spi {
     status = "okay";
-    nice_view: ls0xx@0 {
+    sharp_display: ls0xx@0 {
         compatible = "sharp,ls0xx";
         spi-max-frequency = <1000000>;
         reg = <0>;
@@ -17,6 +17,6 @@
 
 / {
     chosen {
-        zephyr,display = &nice_view;
+        zephyr,display = &sharp_display;
     };
 };
