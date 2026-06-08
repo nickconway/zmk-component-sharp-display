@@ -28,6 +28,7 @@ config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
     imply SHARP_DISPLAY_WIDGET_STATUS
 
 config SHARP_DISPLAY_WIDGET_STATUS
+    bool "Sharp display widget status"
     select LV_USE_LABEL
     select LV_USE_IMAGE
     select LV_USE_CANVAS
@@ -41,6 +42,7 @@ config SHARP_DISPLAY_INVERTED
 if !ZMK_SPLIT || ZMK_SPLIT_ROLE_CENTRAL
 
 config SHARP_DISPLAY_WIDGET_STATUS
+    bool "Sharp display widget status"
     select ZMK_WPM
 
 endif # !ZMK_SPLIT || ZMK_SPLIT_ROLE_CENTRAL

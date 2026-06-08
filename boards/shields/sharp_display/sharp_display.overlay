@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-&sharp_display_spi {
+&spi_node {
     status = "okay";
     sharp_display: ls0xx@0 {
         compatible = "sharp,ls0xx";
@@ -15,8 +15,6 @@
     };
 };
 
-/ {
-    chosen {
-        zephyr,display = &sharp_display;
-    };
+&chosen {
+    zephyr,display = &sharp_display;
 };
