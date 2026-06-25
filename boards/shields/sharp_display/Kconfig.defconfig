@@ -39,6 +39,10 @@ config SHARP_DISPLAY_INVERTED
     bool "Invert display colors"
     default n
 
+config SHARP_DISPLAY_CUSTOM_SCREEN
+    bool "Sharp custom screen"
+    default n
+
 if !ZMK_SPLIT || ZMK_SPLIT_ROLE_CENTRAL
 
 config SHARP_DISPLAY_WIDGET_STATUS
